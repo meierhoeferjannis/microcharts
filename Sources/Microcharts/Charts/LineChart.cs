@@ -67,9 +67,11 @@ namespace Microcharts
         public override void DrawContent(SKCanvas canvas, int width, int height)
         {
             pointsPerSerie.Clear();
-            foreach (var s in Series)
-                pointsPerSerie.Add(s, new List<SKPoint>());
-
+            if (Series != null)
+            {
+                foreach (var s in Series)
+                    pointsPerSerie.Add(s, new List<SKPoint>());
+            }
             base.DrawContent(canvas, width, height);
         }
 
